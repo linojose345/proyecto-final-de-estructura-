@@ -1,0 +1,34 @@
+1. Propósito
+Sistema de gestión de tareas académicas que permite agregar, eliminar, actualizar y visualizar tareas organizadas por prioridad (1-5) y fecha límite. Ofrece una interfaz gráfica (Tkinter) y opción de consola.
+
+2. Componentes Principales
+
+NodoTarea: Almacena los datos de una tarea (nombre, prioridad, fecha) y el enlace al siguiente nodo.
+
+ListaEnlazadaTareas: Lista enlazada para gestionar tareas (agregar, eliminar, actualizar, mostrar).
+
+ColaPrioridadTareas: Cola de prioridad (heap) para obtener la tarea más urgente automáticamente.
+
+InterfazTareas: Interfaz gráfica con formulario, botones y tabla de visualización (Tkinter).
+
+menu_consola(): Versión de línea de comandos para gestión básica.
+
+3. Flujo del Programa
+
+Interfaz gráfica: El usuario ingresa datos, interactúa con botones y ve las tareas en una tabla actualizable.
+
+Consola: Menú interactivo para gestionar tareas sin interfaz visual.
+
+4. Tecnologías/Patrones
+
+Estructuras de datos: Lista enlazada y Heap.
+
+Interfaz: Tkinter (biblioteca estándar de Python).
+
+Modelo-Vista simple (lógica y UI separadas).
+
+5. Notas Adicionales
+
+Validaciones: Prioridad debe ser entre 1 y 5.
+
+Persistencia: Las tareas no se guardan en disco (solo en memoria durante la ejecución).
