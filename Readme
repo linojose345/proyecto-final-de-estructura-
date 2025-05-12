@@ -1,34 +1,49 @@
-1. Propósito
-Sistema de gestión de tareas académicas que permite agregar, eliminar, actualizar y visualizar tareas organizadas por prioridad (1-5) y fecha límite. Ofrece una interfaz gráfica (Tkinter) y opción de consola.
+# Documentación del Gestor de Tareas Académicas
 
-2. Componentes Principales
+Funcionalidades principales
 
-NodoTarea: Almacena los datos de una tarea (nombre, prioridad, fecha) y el enlace al siguiente nodo.
+Este gestor de tareas académicas implementa varias estructuras de datos y algoritmos para manejar tus pendientes de manera eficiente. Aquí te explico cómo funciona cada parte:
 
-ListaEnlazadaTareas: Lista enlazada para gestionar tareas (agregar, eliminar, actualizar, mostrar).
+Estructuras de datos utilizadas
 
-ColaPrioridadTareas: Cola de prioridad (heap) para obtener la tarea más urgente automáticamente.
+1. Cola de prioridad (heap): 
+   - Organiza tus tareas automáticamente por urgencia
+   - Las tareas con prioridad 1 (más urgente) siempre están listas para completarse primero
+   - Usa el módulo `heapq` de Python para eficiencia
 
-InterfazTareas: Interfaz gráfica con formulario, botones y tabla de visualización (Tkinter).
+2. Árbol binario de categorías:
+   - Almacena tus tareas ordenadas por categoría para búsquedas rápidas
+   - Implementado con recursividad para inserción y búsqueda
+   - Cada categoría contiene su lista de tareas asociadas
 
-menu_consola(): Versión de línea de comandos para gestión básica.
+Funciones principales
 
-3. Flujo del Programa
+Gestión de tareas
+Agregar tareas: Permite ingresar descripción, categoría, prioridad (1-5) y fecha
+- Completar tareas: Ofrece tres opciones:
+  - Tarea seleccionada (la que elijas de la lista)
+  - Tarea más urgente (automáticamente la de prioridad más alta)
+  - Tarea menos urgente (para cuando quieras posponer algo)
 
-Interfaz gráfica: El usuario ingresa datos, interactúa con botones y ve las tareas en una tabla actualizable.
+Visualización
+- Calendario interactivo: Muestra tus tareas organizadas por fecha
+  - Los días con tareas aparecen resaltados
+  - Puedes navegar entre meses
+- Lista priorizada: Muestra todas tus tareas ordenadas por urgencia
+- Búsqueda por categoría: Encuentra rápidamente tareas relacionadas
 
-Consola: Menú interactivo para gestionar tareas sin interfaz visual.
+Utilidades
+- Limpieza de campos: Borra los campos de entrada con un solo clic
+- Estado actualizado: Muestra constantemente cuántas tareas tienes pendientes
 
-4. Tecnologías/Patrones
+Funciones de búsqueda y ordenamiento
+- Búsqueda en árbol: Encuentra todas las tareas de una categoría específica usando recursividad
+- Ordenamiento por prioridad: Muestra tus tareas desde la más urgente hasta la menos urgente
 
-Estructuras de datos: Lista enlazada y Heap.
+Interfaz amigable
+- Diseño claro con colores suaves
+- Indicadores visuales para días con tareas pendientes
+- Botones con iconos intuitivos
+- Calendario que muestra las tareas directamente en cada día
 
-Interfaz: Tkinter (biblioteca estándar de Python).
-
-Modelo-Vista simple (lógica y UI separadas).
-
-5. Notas Adicionales
-
-Validaciones: Prioridad debe ser entre 1 y 5.
-
-Persistencia: Las tareas no se guardan en disco (solo en memoria durante la ejecución).
+Cada función está diseñada para hacer tu gestión académica más sencilla, priorizando automáticamente lo importante y ayudándote a visualizar tus compromisos de manera clara.
